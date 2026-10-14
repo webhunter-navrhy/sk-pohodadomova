@@ -1,0 +1,35 @@
+{
+  "slug": "sk-pohodadomova",
+  "nazev": "pohodadomova.sk",
+  "url": "https://webhunter-navrhy.github.io/sk-pohodadomova/",
+  "base": "/sk-pohodadomova/",
+  "lang": "sk",
+  "popis": "Špecializovaný e-shop TZB z Bratislavy od roku 2008: podlahové kúrenie, tepelné čerpadlá, rekuperácia, voda, plyn, kanalizácia a kúpeľne. Montáž a projekt.",
+  "navrh": true,
+  "domena": "",
+  "og_image": "tc-lg.jpg",
+  "logo": "logo.png",
+  "theme_color": "#f6f5f1",
+  "typ": "Store",
+  "ico": "44552408",
+  "kontakt": {
+    "email": "obchod@pohodadomova.sk",
+    "telefon": "0948 077 007",
+    "adresa": {"ulice": "Mlynarovičova 2", "psc": "851 03", "mesto": "Bratislava", "zeme": "SK"}
+  },
+  "odber": {"ulice": "Elektrárenská 1", "psc": "831 16", "mesto": "Bratislava", "cas": "Pondelok – Piatok 7:30 – 15:30"},
+  "firma": "Teneduria Consulting s.r.o.",
+  "icdph": "SK2022737046",
+  "oteviraci_doba": [],
+  "sameas": [],
+  "cenove_rozpeti": "",
+  "eshop": "https://www.pohodadomova.sk",
+  "formular": {"endpoint": "", "demo": true, "predmet": "Cenová ponuka na montáž a projekt"},
+  "nav": [
+    {"text": "Kategórie", "href": "#kategorie"},
+    {"text": "Akcie", "href": "#akcie"},
+    {"text": "Montáž a projekt", "href": "#montaz"},
+    {"text": "Značky", "href": "#znacky"},
+    {"text": "Kontakt", "href": "#kontakt"}
+  ]
+}

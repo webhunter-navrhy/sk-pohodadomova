@@ -1,0 +1,26 @@
+{
+  "firma": "Teneduria Consulting s.r.o. – e-shop pohodadomova.sk",
+  "obor": "špecializovaný e-shop TZB (kúrenie, chladenie, voda, plyn, kanalizácia, kúpeľne) + montáž a projekt",
+  "mesto": "Bratislava",
+  "ico": "44552408",
+  "kontakty": {"email": "obchod@pohodadomova.sk", "telefon_zverejneny_na_webe": "0948 077 007", "sidlo": "Mlynarovičova 2, 851 03 Bratislava", "osobny_odber": "Elektrárenská 1, 831 16 Bratislava, Po–Pi 7:30–15:30"},
+  "cielova_skupina": "majitelia domov a bytov pri stavbe/rekonštrukcii, kúrenári a inštalatéri",
+  "ton": "vecný, odborný, priateľský („Prajeme Vám príjemný nákup“), slovensky",
+  "brand": {"logo": "podklady/logo.png (333×89, štvorec v prechode červená–žltá–zelená–modrá + text pohodadomova.sk, claim „Vaša kúpeľňa, Vaše teplo domova“)",
+            "farby": {"text": "#181818", "cervena": "#d82430", "zlta": "#fccc48", "zelena": "#48b448", "modra": "#0090d8"},
+            "claimy": ["Vaša kúpeľňa, Vaše teplo domova", "Podlahové kúrenie, tepelné čerpadlá a rekuperácia – budúcnosť pre Vás od nás!"]},
+  "fotky": "len produktové fotky z e-shopu (packshoty 250–1200 px, biele pozadie), zdroj https://www.pohodadomova.sk/user/2/upload/stuff/<id>.jpg; vlastné fotky predajne/realizácií nie sú",
+  "fakta": [
+    {"fakt": "predaj TZB produktov od roku 2008", "zdroj": "https://www.pohodadomova.sk/ (úvodný text)"},
+    {"fakt": "spolupracujú výhradne so slovenskými dodávateľmi", "zdroj": "úvodný text + Prečo nakúpiť u nás"},
+    {"fakt": "80 % tovaru skladom, široký výber, odborný poradca", "zdroj": "bannery na úvodnej stránke"},
+    {"fakt": "certifikát nakupujbezpecne.sk (audit bezpečného nákupu)", "zdroj": "úvodný text + banner"},
+    {"fakt": "služba: projektová dokumentácia, výpis materiálu, individuálna cenová ponuka, realizácia/montáž", "zdroj": "https://www.pohodadomova.sk/tzb-montaze/"},
+    {"fakt": "kategórie a podkategórie, značky s počtom produktov (Vogel 355, Pipelife 280, Ivar 251, Rehau 247, Viega 235, Kolo-Geberit 220, Alcaplast 186, Uponor 185, Herz 145…)", "zdroj": "menu e-shopu 14. 10. 2026"},
+    {"fakt": "akciové produkty s cenami s DPH/bez DPH a dostupnosťou", "zdroj": "podklady/produkty.json (úvodná stránka 14. 10. 2026)"},
+    {"fakt": "IČO 44552408, IČ DPH SK2022737046, OR Okresný súd Bratislava I, vložka 56114/B", "zdroj": "https://www.pohodadomova.sk/kontak/"},
+    {"fakt": "nákup na splátky, platba a dodanie, reklamačný poriadok, vrátenie tovaru", "zdroj": "pätička e-shopu"}
+  ],
+  "chybi": ["fotky predajne / skladu na Elektrárenskej a fotky Vašich realizácií (montáž, kúpeľne)", "krátky text O nás vlastnými slovami (kto ste, koľko ľudí)", "logo vo vektore (SVG/PDF)"],
+  "rozsah_nahladu": "úvodná stránka e-shopu + hlavné kategórie; celý katalog (~3 000 produktov) až v plnej verzii"
+}

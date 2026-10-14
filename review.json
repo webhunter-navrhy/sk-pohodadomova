@@ -1,0 +1,15 @@
+{
+  "znamka": 7,
+  "slabiny": [
+    "Mobil 390/360 px, sekcia „Vyberte podľa toho, čo v dome riešite“ a čipy pod hero: odkazy kategórií sú vysoké len 20 px (QA hlási 26 malých dotykových cieľov). Riadok kategórie je pritom vizuálne celý klikateľný aj so šípkou. Oprava: odkazom urobiť celý riadok (ikona + názov + šípka) s min-height 56 px a čipom v hero dať aspoň 40 px výšky a 8 px rozostupy.",
+    "Mobil, hero: po H1 nasleduje schéma domu a deväť čipov, takže tlačidlá „Prezrieť kategórie“ a „Montáž a projekt na mieru“ sa dostanú až na druhú obrazovku. Telefón 0948 077 007 nie je v hlavičke na mobile ani na PC. Oprava: na ≤ 600 px dať hlavné CTA hneď pod perex, schému a čipy pod neho. Do hlavičky pridať klikateľný tel: odkaz (na PC vpravo vedľa „Osobný odber“, na mobile ikonu telefónu vedľa košíka).",
+    "Sekcia „Montáž TZB a projekt“: pod krokmi 1–4 je packshot Rehau Varionova roztiahnutý na šírku stĺpca. Na PC je mäkký, orezaný a do formulára vytŕča len jeho okraj. Formulár navyše ukazuje natívne anglické „Choose File / No file chosen“. Oprava: fotku nahradiť výrezom vrstvy podlahového kúrenia z hero schémy alebo označeným placeholderom „sem fotka Vašej realizácie“ (brief ju uvádza ako chýbajúcu). File input skryť za vlastný slovenský štýlovaný label „Priložiť podklady (PDF, DWG, JPG, max. 3 MB)“."
+  ],
+  "silne": [
+    "Koncept vychádza priamo z odboru aj z brandu: schéma domu s rozvodmi, ktorých farby sú farby loga (červená teplo, modrá voda, zelená vzduch a slnko, žltá plyn). Rovnaký farebný kód sa opakuje v kartách kategórií, v linke krokov montáže aj v boxe Osobný odber.",
+    "Logo klienta je vľavo v hlavičke aj v pätičke. Paleta je presne podľa briefu a všetky fakty majú zdroj: od roku 2008, 80 % skladom, slovenskí dodávatelia, nakupujbezpecne.sk, počty produktov pri značkách, akciové ceny s DPH aj bez DPH. Nič nie je vymyslené.",
+    "Je to svetlý a pokojný e-shop: vyhľadávanie je hneď v hlavičke, akciové produkty majú skutočné packshoty, zoznam značiek je čisto typografický. Používa dve rodiny písma (Unbounded + Onest) s funkčnou diakritikou a nemá marquee, zrno ani tmavý luxus."
+  ],
+  "verdikt": "opravit – koncept „farby loga = farby rozvodov v dome“ je silný a pravdivý, no mobil (dotykové ciele, CTA pod schémou) a remeselné chyby v sekcii Montáž (roztiahnutý packshot, anglický file input) držia návrh pod hranicou 8. Po týchto troch opravách je na odoslanie.",
+  "_hash": "33f90d791a06f8039f6c18faf1ddbb428cfd8966"
+}

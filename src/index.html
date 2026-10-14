@@ -1,0 +1,154 @@
+{% extends "_base.html" %}
+{% set titulek = 'Kúrenie, tepelné čerpadlá, rekuperácia | pohodadomova.sk' %}
+{% set cesta = '' %}
+{% set E = site.eshop %}
+{% block obsah %}
+<section class="uvod">
+  <div class="wrap uvod-in">
+    <div class="uvod-text">
+      <p class="uvod-pred">Špecializovaný e-shop TZB z&nbsp;Bratislavy</p>
+      <h1>Kúrenie, voda a&nbsp;kúpeľňa pre Váš dom</h1>
+      <p class="uvod-lead">Podlahové kúrenie, tepelné čerpadlá a&nbsp;rekuperácia – budúcnosť pre Vás od nás. Kompletný sortiment na vodu, plyn, kúrenie, chladenie a&nbsp;sanitu od overených značiek.</p>
+      <p class="uvod-tip">Ukážte na časť domu a&nbsp;otvoríme Vám správnu kategóriu.</p>
+      <div class="uvod-cta">
+        <a class="btn btn-plny" href="#kategorie">Prezrieť kategórie</a>
+        <a class="btn btn-obrys" href="#montaz">Montáž a projekt na mieru</a>
+      </div>
+    </div>
+    <figure class="rez" data-aktiv="">
+      {% include "_rez.html" %}
+      <figcaption class="sr">Rez domom: štítky vedú do kategórií e-shopu.</figcaption>
+      <ul class="rez-legenda" role="list">
+        {% for k in [('teplo','Tepelné čerpadlo','/tepelnecerpadlo/'),('teplo','Podlahové kúrenie','/podlahove-kurenie-rehau-uponor-herz/'),('teplo','Kotol a ohrev','/kurenie-chladenie/'),('vzduch','Rekuperácia','/rekuperacia-vzduchu/'),('vzduch','Fotovoltika','/fotovoltaika/'),('voda','Kúpeľňa','/kupelna/'),('voda','Voda','/vodoinstalacny-material/'),('plyn','Plyn','/plyn/'),('odpad','Kanalizácia','/kanalizacia/')] %}
+        <li data-sys="{{ k[0] }}"><a href="{{ E }}{{ k[2] }}" target="_blank" rel="noopener"><i class="c-{{ k[0] }}"></i>{{ k[1] }}</a></li>
+        {% endfor %}
+      </ul>
+    </figure>
+  </div>
+  <ul class="fakty wrap" role="list">
+    <li><i class="c-teplo"></i>Predávame od roku 2008</li>
+    <li><i class="c-plyn"></i>80&nbsp;% tovaru skladom</li>
+    <li><i class="c-vzduch"></i>Odborný poradca</li>
+    <li><i class="c-voda"></i>Len slovenskí dodávatelia</li>
+    <li><i class="c-odpad"></i>Overený obchod nakupujbezpecne.sk</li>
+  </ul>
+</section>
+
+<section class="sekcia kategorie" id="kategorie">
+  <div class="wrap">
+    <header class="sekcia-hlava">
+      <h2>Vyberte podľa toho, čo v&nbsp;dome riešite</h2>
+      <p>Farby rozvodov sú farby nášho loga: červená teplo, modrá voda, zelená vzduch a&nbsp;slnko, žltá plyn.</p>
+    </header>
+    <div class="kat-mriezka">
+      {% for k in data.kategorie %}
+      <article class="kat" data-sys="{{ k.sys }}">
+        <a class="kat-foto" href="{{ E }}{{ k.url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">{{ img(k.foto, '', sizes='160px', eager=False) }}</a>
+        <div class="kat-text">
+          <p class="kat-sys"><i class="c-{{ k.sys }}"></i>{{ k.system }}</p>
+          <h3><a href="{{ E }}{{ k.url }}" target="_blank" rel="noopener">{{ k.nazov }}</a></h3>
+          <p class="kat-popis">{{ k.popis }}</p>
+          {% if k.sub %}<ul class="kat-sub" role="list">{% for s in k.sub %}<li><a href="{{ E }}{{ s[1] }}" target="_blank" rel="noopener">{{ s[0] }}</a></li>{% endfor %}</ul>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sekcia akcie" id="akcie">
+  <div class="wrap">
+    <header class="sekcia-hlava riadok">
+      <h2>Akciové produkty</h2>
+      <div class="akcie-ovl">
+        <a class="odkaz" href="{{ E }}/akciovy-tovar/" target="_blank" rel="noopener">Všetok akciový tovar</a>
+        <button class="sipka" data-smer="-1" aria-label="Predchádzajúce produkty">←</button>
+        <button class="sipka" data-smer="1" aria-label="Ďalšie produkty">→</button>
+      </div>
+    </header>
+  </div>
+  <ul class="pas" role="list" tabindex="0" aria-label="Akciové produkty">
+    {% for p in data.akcie %}
+    <li class="produkt">
+      <a class="produkt-foto" href="{{ p.url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">{{ img(p.foto, '', sizes='240px', eager=False) }}<span class="flag {{ 'flag-tip' if p.stitok == 'Tip' }}">{{ p.stitok }}</span></a>
+      <h3><a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.nazov }}</a></h3>
+      {% if p.kod %}<p class="kod">kód {{ p.kod }}</p>{% endif %}
+      <p class="cena">{{ p.cena }}</p>
+      <p class="bezdph">bez DPH {{ p.bez_dph }}</p>
+      {% if p.dostupnost %}<p class="dost {{ 'skladom' if p.dostupnost == 'skladom' }}">{{ p.dostupnost }}</p>{% else %}<p class="dost dost-nic" aria-hidden="true">&nbsp;</p>{% endif %}
+      <a class="btn btn-maly" href="{{ p.url }}" target="_blank" rel="noopener">Do košíka</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="sekcia montaz" id="montaz">
+  <div class="wrap montaz-in">
+    <div class="montaz-text">
+      <h2>Montáž TZB a&nbsp;projekt</h2>
+      <p class="montaz-lead">Navrhneme kúpeľňu, podlahové kúrenie, stropné chladenie, vodu aj kanalizáciu. Venujeme sa aj tepelným čerpadlám a&nbsp;rekuperácii.</p>
+      <p>Všetky komponenty Vám ušijeme na mieru a&nbsp;ak nemáte svojho kúrenára, vieme ich aj namontovať. Keď projekt nemáte, spracujeme ho podľa Vašich požiadaviek.</p>
+      <ol class="kroky" role="list">
+        <li><b>Projektová dokumentácia</b><span>podľa Vašich požiadaviek</span></li>
+        <li><b>Presný výpis materiálu</b><span>ku každému projektu</span></li>
+        <li><b>Individuálna cenová ponuka</b><span>pre Váš projekt</span></li>
+        <li><b>Realizácia a&nbsp;montáž</b><span>keď nemáte svojho kúrenára</span></li>
+      </ol>
+    </div>
+    <div class="montaz-form">
+      <h3>Cenová ponuka na montáž a&nbsp;projekt</h3>
+      <p>Napíšte Vaše požiadavky čo najpresnejšie. Ozveme sa e-mailom.</p>
+      <form class="formular" method="post" enctype="multipart/form-data" data-endpoint="{{ site.formular.endpoint }}" data-demo="{{ 1 if site.formular.demo or not site.formular.endpoint else 0 }}">
+        <label>Meno a priezvisko <input name="meno" autocomplete="name" required></label>
+        <div class="dva">
+          <label>E-mail <input name="email" type="email" autocomplete="email" required></label>
+          <label>Mobil <input name="mobil" type="tel" autocomplete="tel"></label>
+        </div>
+        <label>Názov projektu <input name="projekt" placeholder="napr. podlahovka v novostavbe"></label>
+        <label>Popis projektu <textarea name="popis" rows="5" required placeholder="plocha, počet miestností, zdroj tepla…"></textarea></label>
+        <div class="subor"><span class="subor-nadpis">Technické podklady</span><input id="podklady" class="sr" name="podklady" type="file"><label for="podklady" class="subor-btn">Priložiť podklady <span>(PDF, DWG, JPG, max. 3&nbsp;MB)</span></label><span class="subor-meno" aria-live="polite"></span></div>
+        <div class="past" aria-hidden="true"><label>Nevypĺňať <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="_subject" value="{{ site.formular.predmet }}">
+        <button class="btn btn-plny" type="submit">Odoslať dopyt</button>
+        <p class="formular-stav" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sekcia znacky" id="znacky">
+  <div class="wrap">
+    <header class="sekcia-hlava">
+      <h2>Tovar podľa značiek</h2>
+      <p>Kvalitné a&nbsp;značkové produkty od známych a&nbsp;certifikovaných výrobcov. Číslo je počet produktov v&nbsp;e-shope.</p>
+    </header>
+    {% set top = data.znacky|sort(attribute='pocet', reverse=True) %}
+    <ol class="znacky-top" role="list">
+      {% for z in top[:8] %}<li><a href="{{ z.url }}" target="_blank" rel="noopener"><span class="zn">{{ z.nazov|replace('Kolo - Geberit','Kolo – Geberit') }}</span><span class="pc">{{ z.pocet }}</span></a></li>{% endfor %}
+    </ol>
+    <details class="znacky-vsetky">
+      <summary>Všetkých {{ data.znacky|length }} značiek od A po Z</summary>
+      <ul role="list">
+        {% for z in data.znacky %}<li><a href="{{ z.url }}" target="_blank" rel="noopener">{{ z.nazov }}</a><span>{{ z.pocet }}</span></li>{% endfor %}
+      </ul>
+    </details>
+  </div>
+</section>
+
+<section class="sekcia preco">
+  <div class="wrap preco-in">
+    <div>
+      <h2>Prečo nakúpiť u&nbsp;nás</h2>
+      <p class="preco-velky">Vyznáme sa v&nbsp;problematike sortimentu, ktorý predávame, a&nbsp;ručíme za všetky výrobky. Spolupracujeme len so slovenskými dodávateľmi.</p>
+      <p>Reklamácie a&nbsp;záručné doby sú pri kúpe špecializovaného tovaru veľmi dôležité. Preto nepredávame tovar dovezený zo zahraničia ani iným spôsobom získaný tovar. Len kvalitne odvedená práca nás posúva ďalej a&nbsp;spokojnosť zákazníkov je tou najlepšou odmenou.</p>
+      <p class="podpis">Prajeme Vám príjemný nákup.</p>
+    </div>
+    <aside class="odber">
+      <h3>Osobný odber</h3>
+      <p class="odber-adresa">{{ site.odber.ulice }}<br>{{ site.odber.psc }}&nbsp;{{ site.odber.mesto }}</p>
+      <p>{{ site.odber.cas }}</p>
+      <p class="odber-kontakt"><a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a><br><a href="tel:+421948077007">{{ site.kontakt.telefon }}</a></p>
+    </aside>
+  </div>
+</section>
+{% endblock %}

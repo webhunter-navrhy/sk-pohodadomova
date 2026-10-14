@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ titulek or site.nazev }}</title>
+<meta name="description" content="{{ popis or site.popis }}">
+{% if site.navrh or noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+<meta name="theme-color" content="{{ site.theme_color }}">
+<link rel="canonical" href="{{ site.url }}{{ cesta or '' }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:title" content="{{ titulek or site.nazev }}">
+<meta property="og:description" content="{{ popis or site.popis }}">
+<meta property="og:url" content="{{ site.url }}{{ cesta or '' }}">
+{% if og_url %}<meta property="og:image" content="{{ og_url }}">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">{% endif %}
+<link rel="preload" href="{{ base }}fonts/Unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% if jsonld %}<script type="application/ld+json">{{ jsonld|safe }}</script>{% endif %}
+</head>
+<body>
+<a class="skip" href="#obsah">Preskočiť na obsah</a>
+<header class="hlavicka">
+  <div class="wrap hlavicka-in">
+    <a href="{{ url('') }}" class="logo"><img src="{{ base }}{{ site.logo }}" alt="pohodadomova.sk – Vaša kúpeľňa, Vaše teplo domova" width="333" height="89"></a>
+    <form class="hladat" action="{{ site.eshop }}/vyhladavanie/" method="get" target="_blank" role="search">
+      <label class="sr" for="q">Vyhľadať produkt</label>
+      <input id="q" name="search" type="search" placeholder="Hľadať produkt, značku alebo kód…" autocomplete="off">
+      <button type="submit">Hľadať</button>
+    </form>
+    <a class="tel" href="tel:+421948077007"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6.6 3.5h3l1.4 4-2 1.3a11 11 0 0 0 6.2 6.2l1.3-2 4 1.4v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>{{ site.kontakt.telefon }}</span></a>
+    <a class="kosik" href="{{ site.eshop }}/" target="_blank" rel="noopener" aria-label="Košík"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 4h2.4l2.2 10.4a1.6 1.6 0 0 0 1.6 1.3h7.9a1.6 1.6 0 0 0 1.5-1.2L20.4 8H6.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="19.5" r="1.4" fill="currentColor"/><circle cx="17" cy="19.5" r="1.4" fill="currentColor"/></svg><span>Košík</span></a>
+    <button class="burger" aria-expanded="false" aria-controls="menu"><span></span><span class="sr">Menu</span></button>
+  </div>
+  <nav class="menu" id="menu" aria-label="Hlavná">
+    <div class="wrap menu-in">
+      {% for n in site.nav %}<a href="{{ n.href }}">{{ n.text }}</a>{% endfor %}
+      <span class="menu-info">Osobný odber: {{ site.odber.ulice }}, {{ site.odber.mesto }}</span>
+    </div>
+  </nav>
+</header>
+<main id="obsah">
+{% block obsah %}{% endblock %}
+</main>
+<footer class="paticka" id="kontakt">
+  <div class="wrap paticka-in">
+    <div class="pat-firma">
+      <img src="{{ base }}{{ site.logo }}" alt="pohodadomova.sk" width="333" height="89" loading="lazy">
+      <p>{{ site.firma }}<br>{{ site.kontakt.adresa.ulice }}, {{ site.kontakt.adresa.psc }}&nbsp;{{ site.kontakt.adresa.mesto }}<br>IČO {{ site.ico }} · IČ&nbsp;DPH {{ site.icdph }}</p>
+    </div>
+    <div>
+      <h2 class="pat-h">Kontakt</h2>
+      <p><a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a><br><a href="tel:+421948077007">{{ site.kontakt.telefon }}</a></p>
+    </div>
+    <div>
+      <h2 class="pat-h">Osobný odber</h2>
+      <p>{{ site.odber.ulice }}<br>{{ site.odber.psc }}&nbsp;{{ site.odber.mesto }}<br>{{ site.odber.cas }}</p>
+    </div>
+    <div>
+      <h2 class="pat-h">Nákup</h2>
+      <ul role="list" class="pat-odkazy">
+        <li><a href="{{ site.eshop }}/ako-nakupovat-eshop/" target="_blank" rel="noopener">Ako nakupovať</a></li>
+        <li><a href="{{ site.eshop }}/doprava/" target="_blank" rel="noopener">Platba a doprava</a></li>
+        <li><a href="{{ site.eshop }}/" target="_blank" rel="noopener">Nákup na splátky</a></li>
+        <li><a href="{{ site.eshop }}/" target="_blank" rel="noopener">Obchodné podmienky a reklamácie</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap pat-spodok"><p>© 2013–2026 pohodadomova.sk · Návrh novej verzie webu</p></div>
+</footer>
+<script src="{{ asset('js/main.js') }}" defer></script>
+</body>
+</html>
